@@ -102,14 +102,39 @@
 
 }
 .items {
+    margin: 90px auto 0 auto;
     height: 374px;
     width: 1084px;
-    margin: 100px auto 0 auto;
     display: flex;
     justify-content: space-between;
     &_info {
         width: 673px;
         height: 374px;
+        
+        &_div {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: rgb(165, 0, 0);
+            &_btn {
+                height: 61px;
+                width: 234px;
+                border: none;
+                background: linear-gradient(260.58deg, rgba(147, 73, 241, 0.8) -23.43%, rgba(160, 187, 255, 0) 209.01%);
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 25px;
+                line-height: 33px;
+                color: white;
+                cursor: pointer;
+                transition-duration: 0.3s;
+                &:hover {
+                    background: #00000018;
+                    transition-duration: 0.4s;
+                }
+            }
+        }
         &_p1 {
             font-family: 'Inter';
             font-style: normal;
@@ -131,24 +156,7 @@
             margin-bottom: 20px;
 
         }
-        &_btn {
-            height: 61px;
-            width: 234px;
-            border: none;
-            background: linear-gradient(260.58deg, rgba(147, 73, 241, 0.8) -23.43%, rgba(160, 187, 255, 0) 209.01%);
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 300;
-            font-size: 25px;
-            line-height: 33px;
-            color: white;
-            cursor: pointer;
-            transition-duration: 0.3s;
-            &:hover {
-                background: #00000018;
-                transition-duration: 0.4s;
-            }
-        }
+
 
     }
     &_sale {
@@ -378,7 +386,9 @@
                 &_img {
                     width: 107px;
                     height: 95px;
-                    transform: rotate(90deg);
+                    &:hover {
+                        transform: rotate(90deg);
+                    }
                 }
                 &_p1 {
                     font-family: 'Inter';
@@ -409,8 +419,12 @@
         width: 300px;
         height: 263px;
         box-shadow: 7px 7px 23px -2px rgba(0, 0, 0, 0.25);
-        background: linear-gradient(275.56deg, rgba(147, 73, 241, 0.8) -59.26%, rgba(160, 187, 255, 0) 172.65%);
         background: linear-gradient(341.61deg, rgba(139, 103, 187, 0.8) -85.73%, rgba(160, 187, 255, 0) 194.55%);
+        transition-duration: 0.3s;
+        &:hover {
+            background: rgb(214, 214, 214);
+            transition-duration: 0.3s;
+        }
         &_div {
             margin-top: 18px;
             
@@ -475,21 +489,11 @@
         }
     }
 }
+.mediamenu {
+    height: 70px ;
+    width: 70px;
+}
 @media screen and (max-width:1100px) {
-    .items {
-        flex-direction: column;
-        height: auto;
-        width: auto;
-        &_info {
-            margin-left: 10vh;
-        }
-        &_sale {
-            margin-left: 10vh;
-        }
-    }
-    .hv2 {
-        margin-left: 10vh;
-    }
     .doc {
         width: 910px;
         flex-direction: column;
@@ -500,7 +504,6 @@
     }
     .adder {
         width: 910px;
-        margin-left: 10vh;
         &_div {
             &_p1 {
                 width: 550px;
@@ -515,7 +518,6 @@
             justify-content: space-between;
             column-gap: 20px;
             width: 910px;
-            margin-left: 10vh;
             &_arrow {
                 width: 430px;
                 &_p1 {
@@ -533,6 +535,9 @@
             }
 
         }
+    }
+    .items {
+        width: 910px;
     }
 }
 @media screen and (max-width:1024px) {
@@ -576,15 +581,37 @@
     }
     .tarif {
         width: 680px;
-        margin-left: 20px;
         column-gap: 10px;
-        margin-left: 100px;
+        margin: 120px auto 120px auto;
         &_item {
             width: 200px;
             &_div {
                 margin-left: -17px;
             }
         }
+    }
+    .items {
+        flex-direction: column;
+        height: 780px;
+        width: 680px;
+        justify-content: center;
+        &_sale {
+            margin: 0 auto;
+        }
+        &_info {
+            margin: 0 auto;
+            &_p1 {
+                text-align: center;
+            }
+            &_p2 {
+                text-align: center;
+            }
+        }
+    }
+    .adddiv {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 }
 @media screen and (max-width:900px) {
@@ -611,29 +638,6 @@
     }
     .mediaspan {
         display: none;
-    }
-    .items {
-        &_info {
-            width: 395px;
-            margin-bottom: -140px;
-            margin-top: -50px;
-            &_p1 {
-                font-size: 15px;
-                line-height: 18px;
-            }
-            &_p2 {
-                font-size: 12px;
-                line-height: 18px;
-            }
-        }
-        &_sale {
-            height: 320px;
-            &_p1 {
-                font-size: 15px;
-                line-height: 18px;
-                width: 80%;
-            }
-        }
     }
     .doc {
         width: 400px;
@@ -687,29 +691,35 @@
             width: 180px;
         }
     }
+    .items {
+        width: 400px;
+        &_info {
+            width: 400px;
+            &_p1 {
+                width: 400px;
+                font-size: 25px;
+                line-height: 25px;
+            }
+            &_p2 {
+                width: 400px;
+                font-size: 25px;
+                line-height: 25px;
+            }
+            &_div {
+                width: 400px;
+            }
+
+        }
+    }
 }
 @media screen and  (max-width:520px)  {
-    .items {
-        flex-direction: column;
-        height: auto;
-        width: auto;
-        &_info {
-            margin-left: 2vh;
-        }
-        &_sale {
-            margin-left: 2vh;
-        }
-        
-    }    
-    .hv2 {
-        margin-left: 1.5vh;
-    }
     .adder {
         margin-left: 1.5vh;
+        margin: 60px auto 0 auto;
     }
     .full {
         &_global {
-            margin-left: 1.5vh;
+            margin: 0 auto 0 auto;
         }
     }
     .tarif {
@@ -774,18 +784,6 @@
     }
 }
 @media screen and (max-width:425px) {
-    .items {
-        &_info  {
-            width: 300px;
-            margin-bottom: -120px;
-            &_btn {
-                width: 300px;
-            }
-        }
-        &_sale {
-            width: 300px;
-        }
-    }
     .doc {
         width: 300px;
         margin-top: 40px;
@@ -816,14 +814,32 @@
             }
         }
     }
-}
-@media screen and (max-width:320px) {
     .items {
+        width: 300px;
         &_info {
-            margin-left: 1.5vh;
+            width: 300px;
+            &_p1 {
+                width: 300px;
+                font-size: 20px;
+                line-height: 20px;
+            }
+            &_p2 {
+                width: 300px;
+                font-size: 20px;
+                line-height: 20px;
+            }
+            &_div {
+                width: 300px;
+            }
         }
         &_sale {
-            margin-left: 1.5vh;
+            width: 300px;
+            &_p1 {
+                font-size: 20px;
+                line-height: 20px;
+            }
         }
     }
 }
+
+
